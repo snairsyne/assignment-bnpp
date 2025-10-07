@@ -72,6 +72,7 @@ Document content:
         try:
             logger.info(f"Sending text to OpenAI for extraction: {len(text)} characters")
 
+            # Send chat completion request to OpenAI API
             response = self.client.chat.completions.create(
                 model=config.OPENAI_MODEL,
                 messages=[
@@ -81,7 +82,7 @@ Document content:
                     },
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.0,  # Changed from 0.1 to 0.0 for more consistent extraction
+                temperature=0.0,  # Changed from 0.1 to 0.0 for more consistent & strict extraction
                 max_tokens=1500
             )
 
@@ -184,6 +185,7 @@ Document content:
                 flattened[key] = value
         return flattened
 
+# Test the LLM processor
 def main():
     """Test the LLM processor"""
 
