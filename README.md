@@ -18,7 +18,7 @@ Automatically extract key financial data from PDF term sheets and reconcile agai
 ## 📋 Setup
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.10+
 - OpenAI API key
 
 ### Installation
