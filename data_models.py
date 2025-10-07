@@ -69,13 +69,3 @@ class ReconciliationResult(BaseModel):
     comparisons: List[FieldComparison]
     summary: str
 
-# class ReconciliationResult(BaseModel):
-#     """Result of reconciling a single booking record"""
-#     trade_id: int
-#     perfect_match: bool  # Changed from overall_match
-#     match_percentage: float
-#     comparisons: List[FieldComparison]
-#     summary: Optional[str] = None  # Made optional with default
-    
-#     class Config:
-#         populate_by_name = True
