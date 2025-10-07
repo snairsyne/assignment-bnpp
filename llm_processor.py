@@ -27,6 +27,7 @@ class SimpleLLMProcessor:
             logger.error("OpenAI client not initialized")
             return None
 
+        # TODO: move prompts to 'prompts.json' and read from there
         prompt = f"""
 You are a financial document analyst. Extract key information from this bond/debt term sheet.
 
@@ -89,7 +90,7 @@ Document content:
 
             # DEBUG: Log the raw response
             logger.debug(f"Raw OpenAI response:\n{response_text}")
-            print(f"\n🔍 DEBUG - Raw OpenAI Response:\n{response_text}\n")
+            print(f"\n DEBUG - Raw OpenAI Response:\n{response_text}\n")
 
             # Parse JSON response
             if response_text.startswith('```json'):
@@ -108,7 +109,7 @@ Document content:
 
                 # DEBUG: Log parsed data
                 logger.debug(f"Parsed JSON data: {data}")
-                print(f"\n🔍 DEBUG - Parsed JSON:\n{json.dumps(data, indent=2)}\n")
+                print(f"\n DEBUG - Parsed JSON:\n{json.dumps(data, indent=2)}\n")
 
                 term_sheet_data = TermSheetData(**data)
                 logger.info(f"Successfully extracted term sheet data")
