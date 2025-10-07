@@ -6,23 +6,6 @@ from pydantic import BaseModel
 from typing import Optional, List, Any
 from datetime import datetime
 
-# class TermSheetData(BaseModel):
-#     """Extracted term sheet data - backward compatible"""
-#     isin: Optional[str] = None
-#     issuer: Optional[str] = None
-#     coupon_rate: Optional[float] = None
-#     currency: Optional[str] = None
-#     issue_amount: Optional[float] = None
-#     face_value: Optional[float] = None
-#     issue_date: Optional[str] = None
-#     maturity_date: Optional[str] = None
-#     # Additional fields found in documents
-#     tenor: Optional[str] = None
-#     payment_frequency: Optional[str] = None
-
-#     class Config:
-#         # Support both old and new Pydantic versions
-#         allow_population_by_field_name = True
 
 class TermSheetData(BaseModel):
     # Identifiers
